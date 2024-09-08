@@ -41,7 +41,7 @@ export function LandingPage() {
               Powering Digital Infrastructure in Latin America
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              Join us in building the foundation for the region&apos;s digital future
+              Join us in building the foundation for the region's digital future
             </p>
             <Link
               href="#contact"

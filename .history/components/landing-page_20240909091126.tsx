@@ -38,10 +38,10 @@ export function LandingPage() {
         <section className="hero bg-gray-50 py-24 md:py-32">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Powering Digital Infrastructure in Emerging Markets
+              Powering Digital Infrastructure in Latin America
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-                Join us in building the foundation for the region&apos;s digital future
+                Join us in building the foundation for the region's digital future
             </p>
             <Link
               href="/invest-now"
@@ -49,8 +49,8 @@ export function LandingPage() {
             >
               Invest Now <ChevronRight className="ml-2 w-5 h-5" />
             </Link>
-          </div>
-        </section>
+  </div>
+</section>
 
         <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">

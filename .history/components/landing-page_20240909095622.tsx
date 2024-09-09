@@ -1,13 +1,9 @@
 'use client'
 
 import { useState } from 'react'
+import { Menu, X, ChevronRight, Download, Users, Info, Home, DollarSign, Newspaper } from 'lucide-react'
 import Link from 'next/link'
-// Remove the following line:
-// import Image from 'next/image'
-import { Menu, X, ChevronRight, Users, Info, Home, DollarSign, Newspaper } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import Image from 'next/image'
 
 export default function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -24,15 +20,9 @@ export default function LandingPage() {
             <NavLink href="/blog" icon={<Newspaper className="w-4 h-4" />}>Blog</NavLink>
             <NavLink href="/invest-now" icon={<DollarSign className="w-4 h-4" />}>Invest Now</NavLink>
           </div>
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </Button>
+          <button className="md:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            {mobileMenuOpen ? <X /> : <Menu />}
+          </button>
         </nav>
         {mobileMenuOpen && (
           <div className="md:hidden bg-white">
@@ -51,16 +41,17 @@ export default function LandingPage() {
         <section className="hero bg-gray-50 py-24 md:py-32">
           <div className="container mx-auto px-4 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Powering Digital Infrastructure
+              Powering Digital Infrastructure in Latin America
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 mb-8">
-              Join us in building the foundation for the digital future
+              Join us in building the foundation for the region's digital future
             </p>
-            <Button asChild size="lg">
-              <Link href="/invest-now">
-                Invest Now <ChevronRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Link
+              href="/invest-now"
+              className="inline-flex items-center px-6 py-3 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-colors duration-300"
+            >
+              Invest Now <ChevronRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </section>
 
@@ -68,15 +59,16 @@ export default function LandingPage() {
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Our Mission</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto text-center mb-12">
-              7-OKS is dedicated to developing state-of-the-art data centers across emerging markets, 
+              7-OKS is dedicated to developing state-of-the-art data centers across Latin America, 
               bridging the digital divide and accelerating economic growth through robust digital infrastructure.
             </p>
             <div className="text-center">
-              <Button variant="outline" asChild size="lg">
-                <Link href="/about">
-                  Learn More About Us <ChevronRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
+              <Link
+                href="/about"
+                className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 transition-colors duration-300"
+              >
+                Learn More About Us <ChevronRight className="ml-2 w-5 h-5" />
+              </Link>
             </div>
           </div>
         </section>
@@ -107,11 +99,12 @@ export default function LandingPage() {
             <p className="text-xl text-gray-600 mb-8">
               Led by industry veterans with decades of experience in data center development and operations.
             </p>
-            <Button variant="outline" asChild size="lg">
-              <Link href="/team">
-                Meet the Team <ChevronRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Link
+              href="/team"
+              className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 transition-colors duration-300"
+            >
+              Meet the Team <ChevronRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </section>
 
@@ -119,63 +112,40 @@ export default function LandingPage() {
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Latest Insights</h2>
             <p className="text-xl text-gray-600 mb-8">
-              Stay updated with our latest thoughts on the data center industry and digital infrastructure in emerging markets.
+              Stay updated with our latest thoughts on the data center industry and digital infrastructure in Latin America.
             </p>
-            <Button variant="outline" asChild size="lg">
-              <Link href="/blog">
-                Read Our Blog <ChevronRight className="ml-2 h-5 w-5" />
-              </Link>
-            </Button>
+            <Link
+              href="/blog"
+              className="inline-flex items-center px-6 py-3 bg-gray-200 text-gray-900 rounded-md hover:bg-gray-300 transition-colors duration-300"
+            >
+              Read Our Blog <ChevronRight className="ml-2 w-5 h-5" />
+            </Link>
           </div>
         </section>
 
         <section id="contact" className="py-16 md:py-24">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">Contact Us</h2>
-            <form className="max-w-lg mx-auto space-y-4">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                <Input type="text" id="name" name="name" required />
+            <form className="max-w-lg mx-auto">
+              <div className="mb-4">
+                <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  required
+                />
               </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                <Input type="email" id="email" name="email" required />
+              <div className="mb-4">
+                <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-400"
+                  required
+                />
               </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                <Textarea id="message" name="message" rows={4} required />
-              </div>
-              <Button type="submit" className="w-full">
-                Send Message
-              </Button>
-            </form>
-          </div>
-        </section>
-      </main>
-
-      <footer className="bg-gray-900 text-white py-8">
-        <div className="container mx-auto px-4 text-center">
-          <p>&copy; {new Date().getFullYear()} 7-OKS. All rights reserved.</p>
-        </div>
-      </footer>
-    </div>
-  )
-}
-
-function NavLink({ href, children, icon }: { href: string; children: React.ReactNode; icon: React.ReactNode }) {
-  return (
-    <Link href={href} className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
-      {icon}
-      <span>{children}</span>
-    </Link>
-  )
-}
-
-function HighlightCard({ title, description }: { title: string; description: string }) {
-  return (
-    <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-      <h3 className="text-xl font-bold mb-4">{title}</h3>
-      <p className="text-gray-600">{description}</p>
-    </div>
-  )
-}
+              <div className="mb-4">
+                <label htmlFor="message" className="block text-gray-700 font-

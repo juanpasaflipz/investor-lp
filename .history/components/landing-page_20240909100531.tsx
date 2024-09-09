@@ -2,10 +2,9 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-// Remove the following line:
-// import Image from 'next/image'
-import { Menu, X, ChevronRight, Users, Info, Home, DollarSign, Newspaper } from 'lucide-react'
-import { Button } from "@/components/ui/button"
+import Image from 'next/image'
+import { Menu, X, ChevronRight, Download, Users, Info, Home, DollarSign, Newspaper } from 'lucide-react'
+import { Button } from ""
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 

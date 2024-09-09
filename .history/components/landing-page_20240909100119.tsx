@@ -2,9 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-// Remove the following line:
-// import Image from 'next/image'
-import { Menu, X, ChevronRight, Users, Info, Home, DollarSign, Newspaper } from 'lucide-react'
+import Image from 'next/image'
+import { Menu, X, ChevronRight, Download, Users, Info, Home, DollarSign, Newspaper } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -162,7 +161,7 @@ export default function LandingPage() {
   )
 }
 
-function NavLink({ href, children, icon }: { href: string; children: React.ReactNode; icon: React.ReactNode }) {
+function NavLink({ href, children, icon }) {
   return (
     <Link href={href} className="flex items-center space-x-2 text-gray-600 hover:text-gray-900 transition-colors duration-300">
       {icon}
@@ -171,7 +170,7 @@ function NavLink({ href, children, icon }: { href: string; children: React.React
   )
 }
 
-function HighlightCard({ title, description }: { title: string; description: string }) {
+function HighlightCard({ title, description }) {
   return (
     <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
       <h3 className="text-xl font-bold mb-4">{title}</h3>
